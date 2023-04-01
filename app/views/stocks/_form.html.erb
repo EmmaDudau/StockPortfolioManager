@@ -1,0 +1,26 @@
+<%= form_with(model: stock, local: true) do |form| %>
+  <% if stock.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(stock.errors.count, "error") %> Unable to save this stock:</h2>
+
+      <ul>
+      <% stock.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= form.label :ticker %>
+    <%= form.text_field :ticker, id: :stock_ticker %>
+  </div>
+
+  <div class="field form-group"">
+    <%= form.number_field :profile_id, id: :stock_profile_id, value: current_profile.id, type: :hidden %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
