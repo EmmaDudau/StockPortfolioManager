@@ -3,6 +3,7 @@ class StocksController < ApplicationController
   before_action :correct_profile, only: [:edit, :update, :destroy]
   before_action :authenticate_profile!
 
+
   def index
     @api = StockQuote::Stock.new(api_key: 'pk_16a849fd637243a79fff90fa4d42bc5d')
     @stocks = Stock.all
@@ -57,7 +58,7 @@ class StocksController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+        
   def correct_profile
     @ticker = current_profile.stocks.find_by(id: params[:id])
     redirect_to stocks_path, notice: "Cannot edit this stock" if @ticker.nil?

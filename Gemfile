@@ -8,6 +8,7 @@ gem "rails", "~> 7.0.4"
 gem "sprockets-rails"
 
 gem "sqlite3", "~> 1.4"
+
 gem "puma", "~> 5.0"
 
 gem "importmap-rails"
@@ -18,15 +19,24 @@ gem "stimulus-rails"
 
 gem "jbuilder"
 
-
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 gem "bootsnap", require: false
 
 gem 'bootstrap', '~> 4.6.2'
+
 gem 'jquery-rails'
+
 gem 'stock_quote', '~> 3.0'
+
 gem 'devise', '~> 4.6', '>= 4.6.2'
+
+
+#Extension Gem added in order to secure the password strength
+gem 'devise-pwned_password', '~> 0.1.9'
+
+#Adding Invisible CAPTCHA to strengthen the app security
+gem 'invisible_captcha'
 
 
 
