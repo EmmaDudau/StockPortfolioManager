@@ -1,7 +1,6 @@
-class Profile < ApplicationRecord
+class Controller < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable, :pwned_password
-        has_many :stocks 
+         :recoverable, :rememberable, :validatable
 end

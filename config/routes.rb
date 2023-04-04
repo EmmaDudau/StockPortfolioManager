@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
-  resources :stocks
-  devise_for :profiles
+ devise_for :controllers
+ resources :stocks
+ devise_for :profiles
+    
+    
+    # Commented out code for secure branch
+    
+  #devise_for :profiles, controllers: {
+  #registrations: 'profiles/registrations'
+  # }
   root 'home#index'
   get 'home/about'
  
